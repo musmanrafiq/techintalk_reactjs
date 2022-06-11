@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import Select from 'react-select';
+
+const options = [ 
+  { value: 'A', label: 'First'},
+  { value: 'B', label: 'Second'},
+  { value: 'C', label: 'Third'}]
 
 function App() {
+
+  const onSelectionChange = (selectedOption) => {
+    console.log(selectedOption)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Select options={options}
+      onChange={onSelectionChange} />
     </div>
   );
 }
